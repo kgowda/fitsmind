@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TrainerTest < ActiveSupport::TestCase
+class UserChatTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

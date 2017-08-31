@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830023051) do
+ActiveRecord::Schema.define(version: 20170830180055) do
 
-  create_table "trainers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-    t.string "email"
-    t.string "string"
+  create_table "chat", primary_key: ["id", "chat_id"], force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "id", null: false
+    t.integer "user1_id"
+    t.integer "user2_id"
+    t.integer "chat_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -23,9 +24,10 @@ ActiveRecord::Schema.define(version: 20170830023051) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "email"
-    t.string "string"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "string", limit: 45
+    t.string "type"
   end
 
 end
